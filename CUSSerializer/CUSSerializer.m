@@ -60,7 +60,7 @@
         return;
     }
     
-    if ([value respondsToSelector:@selector(serialize)]) {
+    if ([value conformsToProtocol:@protocol(CUSSerializable)]) {
         [dic setValue:[value serialize] forKey:key];
     }else{
         [dic setValue:value forKey:key];
@@ -76,7 +76,7 @@
     NSMutableArray *array = [NSMutableArray array];
     for (id value in self) {
         @try {
-            if ([value respondsToSelector:@selector(serialize)]) {
+            if ([value conformsToProtocol:@protocol(CUSSerializable)]) {
                 [array addObject:[value serialize]];
             }else{
                 [array addObject:value];
@@ -95,7 +95,7 @@
     NSMutableArray *array = [NSMutableArray array];
     for (id value in self) {
         @try {
-            if ([value respondsToSelector:@selector(deserialize)]) {
+            if ([value conformsToProtocol:@protocol(CUSDeserializable)]) {
                 [array addObject:[value deserialize]];
             }else{
                 [array addObject:value];
@@ -124,7 +124,7 @@
             if (!value) {
                 continue;
             }
-            if ([value respondsToSelector:@selector(serialize)]) {
+            if ([value conformsToProtocol:@protocol(CUSSerializable)]) {
                 [dic setValue:[value serialize] forKey:key];
             }else{
                 [dic setValue:value forKey:key];
@@ -152,7 +152,7 @@
             if (!value) {
                 continue;
             }
-            if ([value respondsToSelector:@selector(deserialize)]) {
+            if ([value conformsToProtocol:@protocol(CUSDeserializable)]) {
                 [classModel setValue:[value deserialize] forKey:key];
             }else{
                 [classModel setValue:value forKey:key];
