@@ -1,5 +1,5 @@
 Automatic serialization tool,convert model to NSDictionary, support recursive conversion NSDictionary, NSArray data structures.<br>
-![image](https://github.com/JJMM/CUSResources/raw/master/CUSSerializer.PNG)
+![image](https://github.com/JJMM/CUSResources/raw/master/CUSSerializer.jpg)
 
 ## How To Get Started
 1.Copy the folder named CUSSerializer to your project
