@@ -3,7 +3,7 @@
 //  CUSSerializerExample
 //
 //  Created by zhangyu on 14-5-13.
-//  Copyright (c) 2014年 zhangyu. All rights reserved.
+//  Copyright (c) 2014 zhangyu. All rights reserved.
 //
 
 #import "CUSSerializer.h"
