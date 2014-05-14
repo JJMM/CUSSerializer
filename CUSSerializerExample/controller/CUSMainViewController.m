@@ -38,13 +38,15 @@
     [CUSSerializer setClassMapping:@"CUSTeacher" mappingFor:@"Teacher"];
     [CUSSerializer setClassMapping:@"CUSStudent" mappingFor:@"Student"];
     
+    //load from file
     NSString *path = [[NSBundle mainBundle] pathForResource:@"DictionaryFile" ofType:@"plist"];
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:path];
+    //deserialize to Model
     CUSSchool *school = [dictionary deserialize];
+    //serialize to NSDictionary.It is similar to the file
     NSDictionary *serializeDic = [school serialize];
     NSLog(@"school:%@",school);
     
-
     self.textView.text = [NSString stringWithFormat:@"%@",serializeDic];
 }
 
